@@ -38,7 +38,7 @@ android.libraryVariants.each{variant ->
 
         groupId="com.selincengiz"
         artifactId="paint-view"
-        version="1.0.3"
+        version="1.0.4"
     }
 
 }
