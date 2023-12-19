@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 public class PaintView extends View {
     private Path path = new Path();
     private Paint paint = new Paint();
+    private int customFeatureColor = Color.RED;
 
     public PaintView(Context context) {
         super(context);
@@ -79,8 +80,15 @@ public class PaintView extends View {
 
     private void PaintSettings() {
         paint.setStyle(Paint.Style.STROKE);
-        paint.setColor(Color.YELLOW);
+        paint.setColor(customFeatureColor);
         paint.setStrokeWidth(10);
+    }
+
+    // Dışarıdan özel özelliği ayarlamak için bir metot
+    public void setCustomFeatureColor(int color) {
+        this.customFeatureColor = color;
+        // View'in yeniden çizilmesini sağlar
+        invalidate();
     }
 
 
